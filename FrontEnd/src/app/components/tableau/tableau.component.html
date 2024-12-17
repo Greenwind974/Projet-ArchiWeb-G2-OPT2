@@ -1,0 +1,54 @@
+<h2>Liste des terrains de pétanque</h2>
+<div>
+  <mat-form-field>
+    <mat-label>Filtrer par nom</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. terrain" #input>
+  </mat-form-field>
+<table mat-table [dataSource]="terrainsSource" matSort   class="mat-elevation-z8">
+
+  <ng-container matColumnDef="nom">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by nom"> Nom </th>
+    <td mat-cell *matCellDef="let row">{{ row.nom }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="quantite">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by quantite"> Quantite </th>
+    <td mat-cell *matCellDef="let terrain">{{ terrain.quantite }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let terrain">{{ terrain.description }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="point_geo">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by point_geo"> Point Géographique </th>
+    <td mat-cell *matCellDef="let terrain">{{ terrain.point_geo }}</td>
+  </ng-container>
+  <ng-container matColumnDef="Modifier">
+    <th mat-header-cell *matHeaderCellDef> Modifier </th>
+    <td mat-cell *matCellDef="let terrain">
+      <button mat-flat-button color="primary" (click)="onUpdate(terrain)">Modifier</button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Supprimer">
+    <th mat-header-cell *matHeaderCellDef> Supprimer </th>
+    <td mat-cell *matCellDef="let terrain">
+      <button mat-flat-button color="warn" (click)="onDelete(terrain)">Supprimer</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns,  sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+  </tr>
+</table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+
+</div>

@@ -1,0 +1,35 @@
+<br><br>
+<form class="form" [formGroup]="userForm" (ngSubmit)="CreateUser()">
+  <p class="title">Inscription</p>
+  <p class="message">Créez un compte maintenant, et utilisez toutes les fonctionnalités de notre application !</p>
+      <div class="flex">
+      <label>
+          <input matInput class="input" type="text" formControlName="nom" placeholder="" required="">
+          <span>Nom</span>
+      </label>
+
+      <label>
+          <input matInput class="input" type="text" formControlName="prenom" placeholder="" required="">
+          <span>Prénom</span>
+      </label>
+  </div>
+
+  <label>
+      <input matInput class="input" type="email" formControlName="mail" placeholder="" required="">
+      <span>Email</span>
+  </label>
+
+  <label>
+    <input matInput class="input" type="text" formControlName="username" placeholder="" required="">
+    <span>Nom d'utilisateur</span>
+</label>
+
+  <label>
+      <input matInput class="input" type="password" formControlName="password" placeholder="" required="">
+      <span>Mot de passe</span>
+  </label>
+  <button class="submit">
+    <span>Créer mon compte</span>
+  </button>
+  <p class="signin">Déjà un compte ? <a routerLink="/user-login">Se connecter</a> </p>
+</form>

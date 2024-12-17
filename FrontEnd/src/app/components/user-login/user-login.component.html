@@ -1,0 +1,23 @@
+<br><br>
+<div class="formStyle">
+  <div class="formBox">
+    <form [formGroup]="loginGrp" (ngSubmit)="Connection()" class="form">
+      <p class="title">Se connecter</p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Username :</mat-label>
+          <input class="inputBox" matInput type="text" formControlName="username">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Mot de passe :</mat-label>
+          <input class="inputBox" matInput type="password" formControlName="password">
+        </mat-form-field>
+      </p>
+      <button class="buttonSubmit" mat-raised-button type="submit">
+        <span>Se connecter</span>
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<header>
+    <h1>Terrain de Pétanque</h1>
+    <nav>
+      <a routerLink=""><mat-icon>home</mat-icon>Accueil</a>
+      <a *ngIf="isConnected()" routerLink="tableau">Gestion des terrains</a>
+      <a routerLink="">Carte des terrains</a>
+      <a *ngIf="isConnected()" routerLink="terrain">Réserver</a>
+      <a routerLink="tableau-reservations">Liste des réservations</a>
+      <a *ngIf="!isConnected()" routerLink="user-login">Connexion</a>
+      <a *ngIf="!isConnected()" routerLink="formulaire-user">Inscription</a>
+      <a *ngIf="isConnected()" routerLink="deconnection" (click)="deconnect()"><mat-icon>account_circle</mat-icon>{{ this.username }}</a>
+    </nav>
+</header>
+
+
+

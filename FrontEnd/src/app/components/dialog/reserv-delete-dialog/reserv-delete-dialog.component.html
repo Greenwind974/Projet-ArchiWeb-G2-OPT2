@@ -1,0 +1,21 @@
+<br><br>
+<form class="form" [formGroup]="deleteResaForm" (ngSubmit)="onSubmit()" >
+  <p class="title">Supprimer cette réservation? </p>
+  <label>
+    <input matInput class="input" type="text" formControlName="terrain" placeholder="" required="">
+    <span>Terrain</span>
+  </label>
+
+  <label>
+    <input matInput class="input" type="number" formControlName="user" placeholder="" required="">
+    <span>Utilisateur</span>
+  </label>
+
+
+  <div class="formButton">
+    <button mat-flat-button color="warn">Supprimer</button>
+    <button mat-flat-button color="cancel" mat-dialog-close>Annuler</button>
+
+  </div>
+
+</form>

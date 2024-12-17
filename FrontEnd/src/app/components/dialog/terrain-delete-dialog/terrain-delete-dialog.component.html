@@ -1,0 +1,31 @@
+<br><br>
+<form class="form" [formGroup]="deleteForm" (ngSubmit)="onSubmit()" >
+  <p class="title">Supprimer ce terrain ? </p>
+  <label>
+    <input matInput class="input" type="text" formControlName="nom" placeholder="" required="">
+    <span>Nom</span>
+  </label>
+
+  <label>
+    <input matInput class="input" type="number" formControlName="quantite" placeholder="" required="">
+    <span>Quantité</span>
+  </label>
+
+  <label>
+    <input matInput class="input" type="text" formControlName="description" placeholder="" >
+    <span>Description</span>
+  </label>
+
+  <label>
+    <input matInput class="input" type="text" formControlName="point_geo" placeholder="" required="">
+    <span>Points géographiques</span>
+  </label>
+
+
+  <div class="formButton">
+    <button mat-flat-button color="warn">Supprimer</button>
+    <button mat-flat-button color="cancel" mat-dialog-close>Annuler</button>
+
+  </div>
+
+</form>

@@ -1,0 +1,21 @@
+header {
+  text-align: center;
+  background-color: cadetblue;
+  color:whitesmoke;
+  margin-bottom: 20px;
+  padding: 10px;
+  font: 1rem "Fira Sans", sans-serif;
+}
+a {
+  margin: 0 10px ;
+  color: whitesmoke;
+  text-decoration: none;
+  font: 1rem "Fira Sans", sans-serif;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.mat-icon{
+  vertical-align: bottom;
+}
